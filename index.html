@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>animehub-ng | Watch Your Next Obsession</title>
+    <meta
+      name="description"
+      content="animehub-ng is your portal to trending anime, epic adventures, and immersive worlds."
+    />
+    <meta name="theme-color" content="#0b1020" />
+    <link rel="canonical" href="https://animehub-ng.github.io/" />
+    <meta property="og:url" content="https://animehub-ng.github.io/" />
+    <meta property="og:site_name" content="animehub-ng" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container nav">
+        <a href="#" class="brand" aria-label="animehub-ng home">
+          <span class="brand-mark">A</span>
+          <span>animehub-ng</span>
+        </a>
+
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#home">Home</a>
+          <a href="#discover">Discover</a>
+          <a href="#popular">Popular</a>
+          <a href="#new">New Episodes</a>
+          <a href="#genres">Genres</a>
+          <a href="#popular" id="watchlist-link">My List <span id="watchlist-count" class="nav-count">0</span></a>
+        </nav>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="sr-only">Open navigation menu</span>
+          <span aria-hidden="true">☰</span>
+        </button>
+
+        <div class="nav-actions">
+          <a href="#newsletter" class="btn ghost">Join free</a>
+          <a href="#popular" class="btn primary">Start Watching</a>
+        </div>
+      </div>
+      <nav id="mobile-menu" class="mobile-menu container" aria-label="Mobile navigation" hidden>
+        <a href="#home">Home</a>
+        <a href="#discover">Discover</a>
+        <a href="#popular">Popular</a>
+        <a href="#new">New Episodes</a>
+        <a href="#genres">Genres</a>
+        <a href="#popular" id="mobile-watchlist-link">My List <span id="mobile-watchlist-count" class="nav-count">0</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <div class="eyebrow">New season • 2026</div>
+            <h1>Find your next <span>anime obsession</span></h1>
+            <p>
+              Explore hand-picked stories, breathtaking fights, and unforgettable characters.
+              From shonen adventures to dark fantasy and romance, animehub-ng brings your favorite worlds to life.
+            </p>
+
+            <div class="hero-actions">
+              <a href="#popular" class="btn primary">Watch now</a>
+              <a href="#discover" class="btn ghost">Browse library</a>
+            </div>
+
+            <div class="stat-row" aria-label="Site statistics">
+              <div class="stat">
+                <strong>25K+</strong>
+                <span>episodes</span>
+              </div>
+              <div class="stat">
+                <strong>320+</strong>
+                <span>titles</span>
+              </div>
+              <div class="stat">
+                <strong>4.9/5</strong>
+                <span>viewer rating</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Featured anime poster">
+            <div class="poster-frame">
+              <div
+                class="poster-card"
+                style="background-image: linear-gradient(180deg, rgba(15, 23, 42, 0.15), rgba(15, 23, 42, 0.8)), url('https://cdn.myanimelist.net/images/anime/10/47347.jpg');"
+              >
+                <div class="poster-badge">Featured</div>
+
+                <div class="poster-info">
+                  <div class="meta">
+                    <span>Action</span>
+                    <span>•</span>
+                    <span>Fantasy</span>
+                    <span>•</span>
+                    <span>12 Episodes</span>
+                  </div>
+                  <h3>Attack on Titan</h3>
+                </div>
+              </div>
+            </div>
+
+            <div class="float-card">
+              <small>Trending now</small>
+              <strong>Frieren</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="discover">
+        <div class="container">
+          <div class="section-header">
+            <h2>Why fans keep coming back</h2>
+            <a href="#genres" class="link-more">View all features</a>
+          </div>
+
+          <div class="feature-row">
+            <article class="feature-card">
+              <div class="feature-icon">⚡</div>
+              <h3>Lightning-fast streaming</h3>
+              <p>
+                Crisp HD playback and seamless switching across every episode so your binge sessions never stop.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">🎧</div>
+              <h3>Curated for every mood</h3>
+              <p>
+                Discover action-packed adventures, thoughtful romances, cozy slice-of-life, and terrifying thrillers.
+              </p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">📺</div>
+              <h3>Fresh weekly drops</h3>
+              <p>
+                Stay current with new episodes, seasonal highlights, and fan-favorite classics in one place.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="popular">
+        <div class="container">
+          <div class="section-header">
+            <h2>Trending this week</h2>
+            <a href="#popular" class="link-more">Explore more</a>
+          </div>
+
+          <div class="library-toolbar">
+            <label class="search-box" aria-label="Search anime">
+              <span>🔎</span>
+              <input id="anime-search" type="search" placeholder="Search anime titles..." />
+            </label>
+
+            <div class="filter-chips" aria-label="Anime categories">
+              <button class="filter-btn active" type="button" data-filter="All">All</button>
+              <button class="filter-btn" type="button" data-filter="Action">Action</button>
+              <button class="filter-btn" type="button" data-filter="Fantasy">Fantasy</button>
+              <button class="filter-btn" type="button" data-filter="Adventure">Adventure</button>
+              <button class="filter-btn" type="button" data-filter="Drama">Drama</button>
+            </div>
+          </div>
+
+          <p id="catalog-status" class="catalog-status" aria-live="polite">Showing the animehub-ng collection.</p>
+
+          <div id="trending-grid" class="grid trending-grid"></div>
+        </div>
+      </section>
+
+      <section class="section" id="new">
+        <div class="container">
+          <div class="banner">
+            <div>
+              <h3>Fresh episodes drop every week</h3>
+              <p>Catch the newest arcs, premieres, and fan reactions before the crowd does.</p>
+            </div>
+            <a href="#popular" class="btn primary">Browse episodes</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="genres">
+        <div class="container">
+          <div class="section-header">
+            <h2>Browse by genre</h2>
+            <a href="#popular" class="link-more">All genres</a>
+          </div>
+
+          <div class="feature-row">
+            <article class="feature-card">
+              <div class="feature-icon">🗡️</div>
+              <h3>Action</h3>
+              <p>Epic duels, relentless energy, and legendary power-ups from start to finish.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">✨</div>
+              <h3>Fantasy</h3>
+              <p>Enter magical worlds, ancient legends, and unforgettable companions with impossible powers.</p>
+            </article>
+
+            <article class="feature-card">
+              <div class="feature-icon">💫</div>
+              <h3>Slice of Life</h3>
+              <p>Warm stories, everyday charm, and heartfelt moments that stay with you long after.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <div class="container newsletter" id="newsletter">
+        <div class="newsletter-card">
+          <p class="eyebrow">Get alerts</p>
+          <h2>Stay in the loop for new drops</h2>
+          <form id="newsletter-form" class="newsletter-form">
+            <input type="email" placeholder="Enter your email" aria-label="Email address" autocomplete="email" required />
+            <button type="submit" class="btn primary">Join now</button>
+          </form>
+          <p id="newsletter-status" aria-live="polite"></p>
+        </div>
+      </div>
+    </main>
+
+    <dialog id="anime-dialog" class="anime-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" type="button" aria-label="Close title details">×</button>
+      <div id="dialog-cover" class="dialog-cover"></div>
+      <div class="dialog-content">
+        <p id="dialog-kicker" class="eyebrow"></p>
+        <h2 id="dialog-title"></h2>
+        <p id="dialog-description" class="dialog-description"></p>
+        <div class="dialog-actions">
+          <a id="dialog-watch" class="btn primary" href="#">Open streaming page</a>
+          <button id="dialog-list" class="btn ghost" type="button">Add to My List</button>
+        </div>
+      </div>
+    </dialog>
+
+    <footer>
+      <div class="container footer-row">
+        <div class="brand">
+          <span class="brand-mark">A</span>
+          <span>animehub-ng</span>
+        </div>
+
+        <div class="footer-links">
+          <a href="#newsletter">Privacy</a>
+          <a href="#newsletter">Terms</a>
+          <a href="mailto:support@animehub.example">Support</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
