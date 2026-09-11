@@ -3,12 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="animehub-ng streaming page for licensed anime viewing." />
+    <meta name="description" content="AnimeHub streaming page for licensed anime viewing." />
     <link rel="canonical" href="https://animehub-ng.github.io/watch.html" />
     <meta property="og:url" content="https://animehub-ng.github.io/watch.html" />
-    <meta property="og:site_name" content="animehub-ng" />
+    <meta property="og:site_name" content="AnimeHub" />
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <title>Watch | animehub-ng</title>
+    <title>Watch | AnimeHub</title>
     <style>
       :root { --bg: #080d1a; --panel: #111a2c; --line: rgba(148, 163, 184, .2); --text: #eef2ff; --muted: #9aa9c2; --accent: #a78bfa; }
       * { box-sizing: border-box; }
@@ -50,7 +50,7 @@
   <body>
     <header>
       <div class="shell nav">
-        <a class="brand" href="index.html">animehub-ng</a>
+        <a class="brand" href="index.html">AnimeHub</a>
         <a class="back" href="index.html#popular">Back to library</a>
       </div>
     </header>
@@ -94,13 +94,13 @@
         <p class="compare">Availability varies by title. <a id="provider-compare" href="#" target="_blank" rel="noopener noreferrer">Compare Nigeria providers on JustWatch</a>.</p>
       </section>
 
-      <p class="notice">animehub-ng does not host or distribute copyrighted episodes. Playback can be connected to media you own or are licensed to distribute.</p>
+      <p class="notice">AnimeHub does not host or distribute copyrighted episodes. Playback can be connected to media you own or are licensed to distribute.</p>
     </main>
     <script>
       const params = new URLSearchParams(window.location.search);
       const title = params.get('title') || 'Anime title';
       const encodedTitle = encodeURIComponent(title);
-      document.title = `Watch ${title} | animehub-ng`;
+      document.title = `Watch ${title} | AnimeHub`;
       document.getElementById('watch-title').textContent = title;
       const episodeSelect = document.getElementById('episode-select');
       const episodeStatus = document.getElementById('episode-status');
