@@ -252,12 +252,21 @@
         </div>
 
         <div class="footer-links">
-          <a href="#newsletter">Privacy</a>
-          <a href="#newsletter">Terms</a>
-          <a href="mailto:support@animehub.example">Support</a>
+          <a href="#privacy" data-info-link="privacy">Privacy</a>
+          <a href="#terms" data-info-link="terms">Terms</a>
+          <a href="#support" data-info-link="support">Support</a>
         </div>
       </div>
     </footer>
+
+    <dialog id="info-dialog" class="info-dialog" aria-labelledby="info-title">
+      <button class="dialog-close info-close" type="button" aria-label="Close information">×</button>
+      <div class="dialog-content">
+        <p id="info-kicker" class="eyebrow">AnimeHub</p>
+        <h2 id="info-title"></h2>
+        <div id="info-body"></div>
+      </div>
+    </dialog>
 
     <script src="script.js" defer></script>
   </body>
