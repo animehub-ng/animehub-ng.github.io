@@ -70,6 +70,9 @@ const dialogWatch = document.getElementById('dialog-watch');
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 const watchlistLinks = document.querySelectorAll('#watchlist-link, #mobile-watchlist-link');
+const infoDialog = document.getElementById('info-dialog');
+const infoTitle = document.getElementById('info-title');
+const infoBody = document.getElementById('info-body');
 
 let activeFilter = 'All';
 let showWatchlistOnly = false;
@@ -81,6 +84,21 @@ const CATALOG_PAGE_SIZE = 20;
 const CATALOG_PAGE_COUNT = 50;
 const WATCH_PAGE = 'watch.html?title=';
 const WATCH_PROVIDER_SEARCH = 'https://www.justwatch.com/us/search?q=';
+
+const infoContent = {
+  privacy: {
+    title: 'Privacy',
+    body: '<p>AnimeHub stores watchlist items and newsletter preferences in your browser\'s local storage. This static site does not create user accounts or send personal data to AnimeHub servers.</p><p>Anime covers and episode information may be requested from third-party services. Provider links open external websites with their own privacy policies.</p><p>Clear your browser site data to remove locally saved watchlist and newsletter information.</p>'
+  },
+  terms: {
+    title: 'Terms of use',
+    body: '<p>AnimeHub is an anime discovery and licensed-provider directory. It does not host, copy, or distribute anime episodes.</p><p>Streaming availability, prices, subtitles, language options, and regional access are controlled by the linked providers and may change without notice.</p><p>Use AnimeHub lawfully and follow the terms of each provider you visit. Content titles, artwork, and trademarks belong to their respective owners.</p>'
+  },
+  support: {
+    title: 'Support',
+    body: '<p>Need help with AnimeHub? Contact Alali Bo Johnson:</p><p><strong>Email:</strong> <a href="mailto:alalibojohnson@gmail.com">alalibojohnson@gmail.com</a><br><strong>Phone:</strong> <a href="tel:+2349069894635">09069894635</a></p><p>When reporting a problem, include the anime title, device, browser, and a short description of what happened.</p>'
+  }
+};
 
 function escapeHtml(value) {
   return String(value)
@@ -348,6 +366,22 @@ if (dialogList) {
     if (activeAnime) toggleWatchlist(activeAnime.title);
   });
 }
+
+document.querySelectorAll('[data-info-link]').forEach((link) => {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    const content = infoContent[link.dataset.infoLink];
+    if (!content || !infoDialog) return;
+    infoTitle.textContent = content.title;
+    infoBody.innerHTML = content.body;
+    infoDialog.showModal();
+  });
+});
+
+document.querySelector('.info-close')?.addEventListener('click', () => infoDialog?.close());
+infoDialog?.addEventListener('click', (event) => {
+  if (event.target === infoDialog) infoDialog.close();
+});
 
 document.querySelector('.dialog-close')?.addEventListener('click', () => animeDialog?.close());
 animeDialog?.addEventListener('click', (event) => {
